@@ -1,0 +1,5 @@
+name: Emoji
+version: '${project.version}'
+main: me.Paqlio
+api-version: 1.18
+authors: [ Paqlio ]
