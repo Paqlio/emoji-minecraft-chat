@@ -27,8 +27,8 @@ public class EmojiListener implements Listener {
                 case ":D" -> "😀";
                 case ":fire:" -> "🔥";
                 case "<3" -> "❤️";
-                case ":tak:" -> "✅";
-                case ":nie:" -> "❌";
+                case ":yes:" -> "✅";
+                case ":no:" -> "❌";
                 default -> emoji;
             };
         }
