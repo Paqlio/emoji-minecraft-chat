@@ -10,9 +10,26 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
  **/
 public class EmojiListener implements Listener {
     @EventHandler
-    public void onChat(AsyncPlayerChatEvent e){
-        var p = e.getPlayer();
-        var msg = e.getMessage();
-        e.setMessage(EmojiList.Emoji(msg));
+    void onChat(AsyncPlayerChatEvent event) {
+        var message = event.getMessage();
+        message = message.replace(message, getEmoji(getEmoji(message)));
+        for (var word : message.split(" ")) {
+            if (word.startsWith(":")) {
+                message = message.replace(word, getEmoji(word));
+                event.setMessage(message);
+            }
+        }
     }
+        private String getEmoji(String emoji){
+            return switch (emoji) {
+                case ":)" -> "😊";
+                case ":(" -> "😔";
+                case ":D" -> "😀";
+                case ":fire:" -> "🔥";
+                case "<3" -> "❤️";
+                case ":tak:" -> "✅";
+                case ":nie:" -> "❌";
+                default -> emoji;
+            };
+        }
 }
