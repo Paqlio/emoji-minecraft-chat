@@ -8,7 +8,7 @@ The EmojiListener is a Bukkit plugin listener designed to enhance the chat exper
 - Players can use specific trigger strings to automatically replace them with emojis in their chat messages.
 
 <h2>Example Triggers and Replacements</h2>
-```
+<code>
 - :) → 😊
 - :( → 😔
 - :D → 😀
@@ -16,6 +16,6 @@ The EmojiListener is a Bukkit plugin listener designed to enhance the chat exper
 - <3 → ❤️
 - :yes: → ✅
 - :no: → ❌ 
-```
+</code>
 <h2> How It Works </h2>
 The listener utilizes the AsyncPlayerChatEvent to intercept and modify player messages before they are sent to the chat. It scans the message for predefined trigger strings (e.g., words starting with ":") and replaces them with corresponding emojis using the getEmoji method.
